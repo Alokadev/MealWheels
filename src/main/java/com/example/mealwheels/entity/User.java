@@ -8,6 +8,9 @@ public class User {
 
     @Id
     private String userName;
+
+    @Column(unique=true)
+    private String email;
     private String userFirstName;
     private String userLastName;
     private String userPassword;
@@ -79,5 +82,13 @@ public class User {
 
     public void setDistance(long distance) {
         this.distance = distance;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
