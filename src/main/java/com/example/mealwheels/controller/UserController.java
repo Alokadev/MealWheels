@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -20,6 +21,12 @@ public class UserController {
     @PostConstruct
     public void initRoleAndUser() {
         userService.initRoleAndUser();
+    }
+
+    @GetMapping("/users")
+    @PreAuthorize("hasRole('Admin')")
+    public List<User> findAll() {
+        return userService.findAllUsers();
     }
 
     @PostMapping({"/reg/registerNewUser"})
