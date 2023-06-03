@@ -15,6 +15,8 @@ public class User {
     private String userLastName;
     private String userPassword;
 
+    private boolean enabled;
+
     private String address;
     private long distance;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -90,5 +92,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

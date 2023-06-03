@@ -47,7 +47,7 @@ public class JwtService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findById(username).get();
 
-        if (user != null) {
+        if (user != null && user.isEnabled() == true) {
             return new org.springframework.security.core.userdetails.User(
                     user.getUserName(),
                     user.getUserPassword(),

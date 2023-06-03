@@ -5,6 +5,8 @@ public class JwtRequest {
     private String userName;
     private String userPassword;
 
+    private boolean isEnabled;
+
     public String getUserName() {
         return userName;
     }
@@ -21,4 +23,11 @@ public class JwtRequest {
         this.userPassword = userPassword;
     }
 
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
 }

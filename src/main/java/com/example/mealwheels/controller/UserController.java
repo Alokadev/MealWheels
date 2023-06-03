@@ -22,14 +22,34 @@ public class UserController {
         userService.initRoleAndUser();
     }
 
-    @PostMapping({"/registerNewUser"})
+    @PostMapping({"/reg/registerNewUser"})
     public User registerNewUser(@RequestBody User user) {
         return userService.registerNewUser(user);
     }
 
-    @PostMapping({"/registerNewAdmin"})
+    @PostMapping({"/reg/registerNewDonor"})
+    public User registerNewDonor(@RequestBody User user) {
+        return userService.registerNewDonor(user);
+    }
+
+    @PostMapping({"/reg/registerNewAdmin"})
     public User registerNewAdmin(@RequestBody User user) {
         return userService.registerNewAdmin(user);
+    }
+
+    @PostMapping({"/reg/registerNewCare"})
+    public User registerNewCare(@RequestBody User user) {
+        return userService.registerNewCare(user);
+    }
+
+    @PostMapping({"/reg/registerNewPartner"})
+    public User registerNewPartner(@RequestBody User user) {
+        return userService.registerNewPartner(user);
+    }
+
+    @PostMapping({"/reg/registerNewRider"})
+    public User registerNewRider(@RequestBody User user) {
+        return userService.registerNewRider(user);
     }
 
     @GetMapping({"/forAdmin"})
